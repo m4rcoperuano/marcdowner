@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <markdown-editor></markdown-editor>
+    <markdown-editor content-id="{{ $contentId }}"></markdown-editor>
 @endsection

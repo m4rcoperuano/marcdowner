@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
+        <div class="row mt-2">
             <div class="col-md-12">
-                <h1> Hello. This app does 2 things: </h1>
+                <h1> Hello. This App Does 2 Things...</h1>
                 <ol>
                     <li> Has an editor for Markdown docs </li>
                     <li> Allows you to share said docs </li>
@@ -17,6 +17,21 @@
                         <span class="fa fa-plus-circle"></span> Create Markdown Doc
                     </button>
                 </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="mt-4">Your markdown docs</h4>
+                <br/>
+                <ul>
+                    @foreach($contents as $content)
+                        <li>
+                            <a href="/editor/{{ $content->id }}">
+                                {{ $content->title }}
+                            </a>
+                        </li>
+                    @endforeach
+                </ul>
             </div>
         </div>
     </div>

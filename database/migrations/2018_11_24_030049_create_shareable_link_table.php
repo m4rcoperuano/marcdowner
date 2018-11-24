@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMarkdownTable extends Migration
+class CreateShareableLinkTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,14 @@ class CreateMarkdownTable extends Migration
      */
     public function up()
     {
-        Schema::create('contents', function (Blueprint $table) {
+        Schema::create('shareable_links', function (Blueprint $table) {
             $table->uuid('id');
-            $table->string('title', 300);
-            $table->text('unparsed_markdown');
-            $table->unsignedInteger('user_id');
-            $table->foreign('user_id')
+            $table->uuid('content_id');
+            $table->foreign('content_id')
                 ->references('id')
-                ->on('users');
-
-            $table->primary('id');
-            $table->timestamps();
+                ->on('contents');
             $table->softDeletes();
+            $table->timestamps();
         });
     }
 
@@ -35,6 +31,6 @@ class CreateMarkdownTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contents');
+        Schema::dropIfExists('shareable_links');
     }
 }

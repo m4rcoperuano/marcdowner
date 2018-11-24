@@ -18,5 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::middleware('auth:api')->group(function() {
-     Route::resource('content', 'Api\ContentController');
+    Route::resource('content', 'Api\ContentController');
+    Route::resource('shareable', 'Api\ShareableController');
 });
