@@ -47,6 +47,12 @@
                                 @endif
                             </li>
                         @else
+                            <li class="nav-item">
+                                <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank" class="nav-link">
+                                    <span class="fas fa-cookie"></span>
+                                    Markdown Cheatsheet
+                                </a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>

@@ -15,5 +15,5 @@ Auth::routes();
 Route::middleware('auth')->group(function() {
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/editor/{id}', 'EditorController@index')->name('editor');
-    Route::post('/content', 'Api\ContentController@create')->name('content-create');
+    Route::post('/content', 'Api\ContentController@store')->name('content-create');
 });

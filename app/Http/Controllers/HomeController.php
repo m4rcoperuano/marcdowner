@@ -25,7 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $contents = Content::where('user_id', Auth::id())->get();
+        $contents = Content::where('user_id', Auth::id())
+            ->orderBy('title')
+            ->get();
         return view('home.index', [
             'contents' => $contents
         ]);

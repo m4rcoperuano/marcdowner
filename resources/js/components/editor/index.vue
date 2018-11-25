@@ -177,6 +177,11 @@
 
             this.activityMessage = null;
             this.loading = false;
+
+            //TODO: Make this conditional
+            window.onbeforeunload = function(){
+                return 'Are you sure you want to leave?';
+            };
         }
     }
 </script>
