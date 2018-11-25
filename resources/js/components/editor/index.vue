@@ -1,6 +1,6 @@
 <template>
   <loader v-if="loading"></loader>
-  <div v-else class="container-fluid">
+  <div v-else class="container-fluid" style="padding-bottom:400px;">
     <div class="row">
       <div class="col-md-6">
         <input type="text"
@@ -46,9 +46,11 @@
           </div>
 
           <div class="card-body" id="markdown-textarea-container">
-            <textarea-autosize placeholder="Markdown..." autofocus class="form-control" id="markdown-textarea"
+            <textarea ref="markdownTextarea" :style="`height:${autoSizeTextAreaHeight}px;overflow:hidden;`"
+                      rows="1"
+                      v-on:keyup="autoSizeTextarea" placeholder="Markdown..." class="form-control" id="markdown-textarea"
                                v-model="contentItem.unparsed_markdown">
-            </textarea-autosize>
+            </textarea>
           </div>
         </div>
       </div>
@@ -91,7 +93,8 @@
                 activityMessage: null,
                 loading: true,
                 shareItem: null,
-                savedExecutedQueue: 0
+                savedExecutedQueue: 0,
+                autoSizeTextAreaHeight: 100
             }
         },
         computed: {
@@ -159,6 +162,9 @@
                 }
 
                 this.activityMessage = null;
+            },
+            autoSizeTextarea() {
+                this.autoSizeTextAreaHeight = this.$refs.markdownTextarea.scrollHeight;
             }
         },
         async mounted() {
@@ -174,6 +180,10 @@
             if (response.success) {
                 this.shareItem = response.data;
             }
+
+            setTimeout(() => {
+                this.autoSizeTextarea();
+            }, 0);
 
             this.activityMessage = null;
             this.loading = false;

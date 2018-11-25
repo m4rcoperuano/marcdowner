@@ -8,13 +8,11 @@
 require('./bootstrap');
 import VuePrism from 'vue-prism'
 import 'prismjs/themes/prism.css'
-import VueTextareaAutosize from 'vue-textarea-autosize';
 import VueShortkey from 'vue-shortkey';
 import VueClipboard from 'vue-clipboard2'
 
 window.Vue = require('vue');
 Vue.use(VuePrism);
-Vue.use(VueTextareaAutosize);
 Vue.use(VueShortkey);
 Vue.use(VueClipboard);
 
