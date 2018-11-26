@@ -2,8 +2,24 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Markdown Sharer</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">An app to create and share markdown files</h6>
+                    <p class="card-text">
+                        Hello! I'm Marco and I built this app to create, store, and share markdown files. If you have any feedback, questions, or feature requests, let me know via my
+                        <a href="https://github.com/m4rcoperuano" target="_blank">
+                            <span class="fab fa-github"></span>
+                            github
+                        </a>
+                    </p>
+                    <a href="{{ route('register') }}" class="card-link">Need an account?</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 

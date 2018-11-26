@@ -31,7 +31,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="nav-item">
+                            <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank" class="nav-link">
+                                <span class="fas fa-external-link-square-alt"></span>
+                                Markdown Cheatsheet
+                            </a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -47,12 +52,6 @@
                                 @endif
                             </li>
                         @else
-                            <li class="nav-item">
-                                <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank" class="nav-link">
-                                    <span class="fas fa-external-link-square-alt"></span>
-                                    Markdown Cheatsheet
-                                </a>
-                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -79,6 +78,14 @@
         <main class="py-2 pl-3 pr-3">
             @yield('content')
         </main>
+
+        <footer class="container text-center" style="margin-top:200px">
+            Questions, comments, and other stuff, contact me ^_^
+            <a href="https://github.com/m4rcoperuano" target="_blank" class="nav-link">
+                <span class="fab fa-github"></span>
+                m4rcoperuano
+            </a>
+        </footer>
     </div>
 
 
