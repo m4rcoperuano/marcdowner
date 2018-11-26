@@ -1,6 +1,6 @@
 <template>
     <div id="loading-container">
-        <img src="/img/loader.gif" style="width:300px;"/>
+        <img src="/img/small-loader.gif" />
     </div>
 </template>
 
@@ -19,8 +19,5 @@
       display:flex;
       justify-content: center;
       align-items: center;
-      background-color:white;
-      top:0;
-      left:0;
     }
 </style>

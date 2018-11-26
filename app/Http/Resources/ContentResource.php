@@ -17,7 +17,8 @@ class ContentResource extends JsonResource
         return [
             'id' => $this->id,
             'unparsed_markdown' => $this->unparsed_markdown,
-            'title' => $this->title
+            'title' => $this->title,
+            'created_at' => $this->updated_at->toDateTimeString()
         ];
     }
 }

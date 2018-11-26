@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class ContentController extends Controller
 {
     public function index() {
-        return "Not implemented!";
+        return ContentResource::collection(Content::whereUserId(Auth::id())->get());
     }
 
     public function show($id) {

@@ -11,6 +11,7 @@
 |
 */
 Auth::routes();
+Route::get('/shareable/{id}', 'ShareableEditorController@index')->name('shareable-editor');
 
 Route::middleware('auth')->group(function() {
     Route::get('/', 'HomeController@index')->name('home');

@@ -10,8 +10,13 @@ use Illuminate\Http\Resources\Json\Resource;
 
 class ShareableController extends Controller
 {
-    public function index() {
+    public function external(Request $request, $id) {
+        $shareable = ShareableLink::find($id);
+        if (!$shareable) {
+            abort(404);
+        }
 
+        return new ShareableLinkResource($shareable);
     }
 
     public function show(Request $request, $id) {

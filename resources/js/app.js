@@ -5,19 +5,23 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-import VuePrism from 'vue-prism'
-import 'prismjs/themes/prism.css'
+require( './bootstrap' );
+import VuePrism from 'vue-prism';
+import 'prismjs/themes/prism.css';
 import VueShortkey from 'vue-shortkey';
-import VueClipboard from 'vue-clipboard2'
+import VueClipboard from 'vue-clipboard2';
 
-window.Vue = require('vue');
-Vue.use(VuePrism);
-Vue.use(VueShortkey);
-Vue.use(VueClipboard);
+let Vue = require( 'vue' );
+window.Vue = Vue;
 
-Vue.component('markdown-editor', require('./components/editor/index.vue'));
+Vue.use( VuePrism );
+Vue.use( VueShortkey );
+Vue.use( VueClipboard );
 
-const app = new Vue({
+Vue.component( 'markdown-editor', require( './components/editor/editor' ) );
+Vue.component( 'markdown-viewer', require( './components/shareable/viewOnly' ) );
+Vue.component( 'document-list', require( './components/home/documentList' ) );
+
+new Vue( {
     el: '#app'
-});
+} );

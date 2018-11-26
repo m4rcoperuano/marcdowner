@@ -49,7 +49,7 @@
                         @else
                             <li class="nav-item">
                                 <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank" class="nav-link">
-                                    <span class="fas fa-cookie"></span>
+                                    <span class="fas fa-external-link-square-alt"></span>
                                     Markdown Cheatsheet
                                 </a>
                             </li>

@@ -17,7 +17,8 @@ class ShareableLinkResource extends JsonResource
         return [
             'id' => $this->id,
             'content_id' => $this->content_id,
-            'shareable_url' => url('/shareable/'.$this->id)
+            'shareable_url' => url('/shareable/'.$this->id),
+            'content' => new ContentResource( $this->content )
         ];
     }
 }

@@ -21,17 +21,9 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h4 class="mt-4">Your markdown docs</h4>
-                <br/>
-                <ul>
-                    @foreach($contents as $content)
-                        <li>
-                            <a href="/editor/{{ $content->id }}">
-                                {{ $content->title }}
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
+                <h3 class="mt-4">Your Markdown Docs</h3>
+                <hr/>
+                <document-list></document-list>
             </div>
         </div>
     </div>

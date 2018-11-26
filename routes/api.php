@@ -13,9 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
+Route::get('/shareable/external/{id}', 'Api\ShareableController@external');
 
 Route::middleware('auth:api')->group(function() {
     Route::resource('content', 'Api\ContentController');
