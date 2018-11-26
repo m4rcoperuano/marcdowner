@@ -11,7 +11,11 @@ use Illuminate\Support\Facades\Auth;
 class ContentController extends Controller
 {
     public function index() {
-        return ContentResource::collection(Content::whereUserId(Auth::id())->get());
+        return ContentResource::collection(
+            Content::whereUserId(Auth::id())
+                ->orderBy('updated_at', 'desc')
+                ->get()
+        );
     }
 
     public function show($id) {
