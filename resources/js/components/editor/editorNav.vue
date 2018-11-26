@@ -10,13 +10,9 @@
         </div>
         <div class="col-12 col-md-6">
             <div class="text-right">
-                <transition v-if="activityMessage" 
-                    name="fade" 
-                    mode="out-in">
-                    <strong class="text-success d-inline-block mr-2">
-                        {{ activityMessage }}
-                    </strong>
-                </transition>
+                <strong v-if="activityMessage" class="text-success d-inline-block mr-2">
+                    {{ activityMessage }}
+                </strong>
                 <strong v-if="shareItem && !activityMessage" class="text-info d-inline-block mr-2">
                     {{ shareItem.shareable_url }}
                     <span v-clipboard:copy="shareItem.shareable_url"
