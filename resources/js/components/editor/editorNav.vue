@@ -38,6 +38,7 @@
                 <button v-shortkey="['ctrl', 's']"
                     class="btn btn-success"
                     tabindex="-1"
+                    title="[CTRL + S]"
                     @click="$emit('save')"
                     @shortkey="$emit('save')">
                     <span v-if="!shouldSave">
