@@ -41,11 +41,12 @@
                 shareItem: null
             };
         },
-        watch: {
-            'shouldSave': function( value ) {
-                window.onbeforeunload = value ? function(){
-                    return 'Are you sure you want to leave?';
-                } : null;
+        methods: {
+            editsUpdated() {
+                this.$nextTick( () => {
+                    // eslint-disable-next-line no-undef
+                    Prism.highlightAll();
+                } );
             }
         },
         async mounted() {

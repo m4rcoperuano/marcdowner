@@ -6,7 +6,6 @@
  */
 
 require( './bootstrap' );
-import VuePrism from 'vue-prism';
 import 'prismjs/themes/prism.css';
 import VueShortkey from 'vue-shortkey';
 import VueClipboard from 'vue-clipboard2';
@@ -14,7 +13,6 @@ import VueClipboard from 'vue-clipboard2';
 let Vue = require( 'vue' );
 window.Vue = Vue;
 
-Vue.use( VuePrism );
 Vue.use( VueShortkey );
 Vue.use( VueClipboard );
 

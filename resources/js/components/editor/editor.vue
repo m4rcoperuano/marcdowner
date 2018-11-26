@@ -94,6 +94,7 @@
         methods: {
             editsUpdated() {
                 this.$nextTick( () => {
+                    // eslint-disable-next-line no-undef
                     Prism.highlightAll();
                 } );
             },

@@ -6,8 +6,7 @@
     "globals": {
         "$": true,
         "require": false,
-        "process": true,
-        "Prism": true
+        "process": true
     },
     "rules": {
         "indent": [
