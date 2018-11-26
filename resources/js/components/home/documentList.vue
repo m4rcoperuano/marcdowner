@@ -28,7 +28,7 @@
         },
         methods: {
             formatCreatedAt( date ) {
-                return moment( date ).calendar().toLowerCase();
+                return moment().utc( date ).calendar().toLowerCase();
             }
         },
         async mounted() {
