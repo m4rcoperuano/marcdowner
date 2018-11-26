@@ -6,7 +6,6 @@
  */
 
 require( './bootstrap' );
-import 'prismjs/themes/prism.css';
 import VueShortkey from 'vue-shortkey';
 import VueClipboard from 'vue-clipboard2';
 
