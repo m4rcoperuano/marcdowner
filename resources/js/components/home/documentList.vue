@@ -4,7 +4,7 @@
         <ul>
             <li v-for="content in contentItems" :key="content.id">
                 <a :href="`/editor/${content.id}`">
-                    {{ content.title }} - Last modified {{ formatCreatedAt(content.updated_at) }}
+                    {{ content.title }} - Last modified {{ formatCreatedAt( content.updated_at ) }}
                 </a>
             </li>
         </ul>
@@ -28,7 +28,7 @@
         },
         methods: {
             formatCreatedAt( date ) {
-                return moment().utc( date ).local().calendar().toLowerCase();
+                return moment.utc( date ).local().calendar().toLowerCase();
             }
         },
         async mounted() {
