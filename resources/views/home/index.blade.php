@@ -5,12 +5,15 @@
         <div class="container">
             <div class="row mt-2">
                 <div class="col-md-12">
-                    <h1> Hello. This App Does 2 Things...</h1>
+                    <h1> Create your first Markdown file below</h1>
+                    <p> This app does 2 things: </p>
                     <ol>
                         <li> Has an editor for Markdown docs</li>
-                        <li> Allows you to share said docs</li>
+                        <li> Allows you to share those docs</li>
                     </ol>
+
                     <p>That's all for now :)</p>
+                    <p>Any questions? Email me at <a href="mailto:marco.j.ledesma@gmail.com">marco.j.ledesma@gmail.com</a></p>
 
                     <form method="post" action="{{ route('content-create')  }}">
                         {{ csrf_field()  }}
