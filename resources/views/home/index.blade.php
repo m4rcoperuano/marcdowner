@@ -10,7 +10,6 @@
                     <ol>
                         <li> Has an editor for Markdown docs</li>
                         <li> Allows you to share those docs</li>
-                        <li>List item</li>
                     </ol>
 
                     <p>That's all for now :)</p>
