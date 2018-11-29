@@ -1,6 +1,6 @@
 <template xmlns:v-clipboard="http://www.w3.org/1999/xhtml">
-    <div class="row">
-        <div class="col-12 col-md-6">
+    <div class="row mt-2">
+        <div class="col-12 col-md-6 pl-1">
             <input id="content-title"
                 v-model="contentItem.title"
                 type="text"
@@ -8,9 +8,9 @@
                 tabindex="0"
                 @keyup.13="$emit('save')"/>
         </div>
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 d-flex align-items-center justify-content-end">
             <div class="text-right">
-                <strong v-if="activityMessage" class="text-success d-inline-block mr-2">
+                <strong v-if="activityMessage" class="text-success d-inline-block mr-2 activity-text">
                     {{ activityMessage }}
                 </strong>
                 <strong v-if="shareItem && !activityMessage" class="text-info d-inline-block mr-2">
@@ -24,19 +24,19 @@
                 </strong>
                 <button v-if="!shareItem"
                     :disabled="activityMessage"
-                    class="btn btn-info text-light"
+                    class="btn btn-info text-light btn-sm"
                     tabindex="-1"
                     @click="$emit('share')">
                     Share
                 </button>
                 <button v-else-if="!activityMessage"
-                    class="btn btn-danger text-light"
+                    class="btn btn-danger text-light btn-sm"
                     tabindex="-1"
                     @click="$emit('deleteShare')">
                     Delete Share
                 </button>
                 <button v-shortkey="['ctrl', 's']"
-                    class="btn btn-success"
+                    class="btn btn-success btn-sm"
                     tabindex="-1"
                     title="[CTRL + S]"
                     @click="$emit('save')"
@@ -92,7 +92,7 @@
         background: none;
         border: 0;
         font-weight: bold;
-        font-size: 25px;
+        font-size: 20px;
     }
 
     #content-title:hover {
@@ -101,5 +101,9 @@
 
     #share-link-copy-button {
         cursor:pointer;
+    }
+
+    .activity-text {
+        font-size:13px;
     }
 </style>

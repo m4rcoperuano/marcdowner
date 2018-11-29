@@ -1,44 +1,47 @@
 <template>
     <loader v-if="loading"></loader>
-    <div v-else 
-        class="container-fluid p-0 pl-md-3 pr-md-3"
-        style="padding-bottom:400px;">
-        <editor-nav :content-item="contentItem"
-            :share-item="shareItem"
-            :activity-message="activityMessage"
-            :should-save="shouldSave"
-            @save="save"
-            @share="share"
-            @deleteShare="deleteShare">
-        </editor-nav>
-        <div class="row mt-2">
-            <div class="col-md-6 pr-md-1 col-12 mb-3">
-                <div class="card card-default">
-                    <div class="card-header text-light bg-dark">
-                        Editor
-                    </div>
+    <div v-else>
 
-                    <div id="markdown-textarea-container" class="card-body">
-                        <textarea id="markdown-textarea"
-                            ref="markdownTextarea"
-                            :style="`height:${autoSizeTextAreaHeight}px;overflow:hidden;`"
-                            v-model="contentItem.unparsed_markdown"
-                            rows="1" 
-                            placeholder="Markdown..." 
-                            class="form-control"
-                            @keyup="autoSizeTextarea">
-                        </textarea>
+        <div class="container-fluid">
+            <editor-nav :content-item="contentItem"
+                :share-item="shareItem"
+                :activity-message="activityMessage"
+                :should-save="shouldSave"
+                @save="save"
+                @share="share"
+                @deleteShare="deleteShare">
+            </editor-nav>
+            <div class="row mt-2">
+                <div class="col-md-6 pr-md-1 col-12 mb-3 no-padding no-borders">
+                    <div class="card card-default">
+                        <div class="card-header text-light bg-dark p-1 pl-2 card-small-text">
+                            <span class="fas fa-edit"></span>
+                            Editor
+                        </div>
+
+                        <div id="markdown-textarea-container" class="card-body">
+                            <textarea id="markdown-textarea"
+                                ref="markdownTextarea"
+                                :style="`height:${autoSizeTextAreaHeight}px;overflow:hidden;`"
+                                v-model="contentItem.unparsed_markdown"
+                                rows="1" 
+                                placeholder="Markdown..." 
+                                class="form-control"
+                                @keyup="autoSizeTextarea">
+                            </textarea>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6 pl-md-1 col-12">
-                <div class="card card-default">
-                    <div class="card-header">
-                        Viewer
-                    </div>
+                <div class="col-md-6 pl-md-1 col-12 no-padding no-borders">
+                    <div class="card card-default">
+                        <div class="card-header text-dark bg-default p-1 pl-2 card-small-text">
+                            <span class="fas fa-eye"></span>
+                            Viewer
+                        </div>
 
-                    <div id="markdown-viewer-container" class="card-body">
-                        <vue-markdown :source="contentItem.unparsed_markdown" @rendered="editsUpdated"></vue-markdown>
+                        <div id="markdown-viewer-container" class="card-body">
+                            <vue-markdown :source="contentItem.unparsed_markdown" @rendered="editsUpdated"></vue-markdown>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -173,19 +176,41 @@
 </script>
 
 <style scoped>
-  #markdown-viewer-container {
-    padding-bottom: 40px;
-    min-height: 99px;
-  }
+    #markdown-viewer-container {
+        padding-bottom: 40px;
+        min-height: 99px;
+    }
 
-  #markdown-textarea {
-    border-radius: 0;
-    border: 0;
-    min-height: 99px;
-  }
+    #markdown-textarea {
+        border-radius: 0;
+        border: 0;
+        min-height: 99px;
+    }
 
-  #markdown-textarea-container {
-    overflow: hidden;
-    padding: 0;
-  }
+    #markdown-textarea-container {
+        overflow: hidden;
+        padding: 0;
+        border-right: 0.5px solid #CCC;
+    }
+
+    .card-small-text {
+        font-size:13px;
+    }
+
+    .no-padding {
+        padding:0 !important;
+    }
+
+    .no-borders {
+        border:0 !important;;
+    }
+
+    .no-borders .card {
+        border:0 !important;;
+    }
+
+    .no-borders .card-header {
+        border:0 !important;;
+        border-radius:0 !important;;
+    }
 </style>

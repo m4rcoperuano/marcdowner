@@ -20,8 +20,8 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container-fluid pl-0 pr-0">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
@@ -76,11 +76,11 @@
             </div>
         </nav>
 
-        <main class="py-2 pl-3 pr-3">
+        <main>
             @yield('content')
         </main>
 
-        <footer class="container text-center" style="margin-top:200px">
+        <footer class="container text-center mb-4" style="margin-top:200px">
             Questions, comments, and other stuff, contact me ^_^
             <a href="https://github.com/m4rcoperuano" target="_blank" class="nav-link">
                 <span class="fab fa-github"></span>
