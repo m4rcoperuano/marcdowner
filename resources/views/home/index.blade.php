@@ -5,11 +5,12 @@
         <div class="container">
             <div class="row mt-2">
                 <div class="col-md-12">
-                    <h1> Create your first Markdown file below</h1>
-                    <p> This app does 2 things: </p>
+                    <h1>Create your first Markdown file below</h1>
+                    <p>This app does 2 things: </p>
                     <ol>
                         <li> Has an editor for Markdown docs</li>
                         <li> Allows you to share those docs</li>
+                        <li>List item</li>
                     </ol>
 
                     <p>That's all for now :)</p>
