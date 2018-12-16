@@ -9,7 +9,7 @@
                     <h5 class="card-title">Markdown Sharer</h5>
                     <h6 class="card-subtitle mb-2 text-muted">An app to create and share markdown files</h6>
                     <p class="card-text">
-                        Hello! I'm Marco and I built this app to create, store, and share markdown files. If you have any feedback, questions, or feature requests, let me know via my
+                        Hello! I'm Marco and I built this app to create, store, and share markdown files. If you have any feedback, questions, or feature requests
                         <a href="https://github.com/m4rcoperuano" target="_blank">
                             <span class="fab fa-github"></span>
                             github
